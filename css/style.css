@@ -72,3 +72,18 @@ button {
   border: none;
   border-radius: 3px;
 }
+
+/* 5 Day Forecast */
+.weather-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.weather-item {
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 15px 10px;
+  background-color: rgb(80, 80, 124);
+  color: #fff;
+}
