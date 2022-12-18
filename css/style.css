@@ -18,3 +18,12 @@ body {
 .column {
   flex-direction: column;
 }
+
+/* CUSTOM STYLES */
+h1 {
+  font-size: 1.7rem;
+  padding: 6px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, rgb(87, 87, 255), rgb(0, 6, 125));
+}
