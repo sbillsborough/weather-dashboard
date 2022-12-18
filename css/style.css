@@ -40,8 +40,18 @@ h1 {
 
 .search-history-container {
   margin: 5px;
+  width: 250px;
 }
 
 .h3 {
   font-size: 1.1rem;
+}
+
+.search-button {
+  width: 100%;
+  background-color: rgb(99, 158, 252);
+  border: none;
+  padding: 3px;
+  color: #fff;
+  font-size: 0.8rem;
 }
