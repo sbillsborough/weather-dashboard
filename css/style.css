@@ -28,6 +28,10 @@ h1 {
   background: linear-gradient(to right, rgb(87, 87, 255), rgb(0, 6, 125));
 }
 
+hr {
+  margin: 10px;
+}
+
 .today {
   border: 1px solid #000;
   padding: 10px;
