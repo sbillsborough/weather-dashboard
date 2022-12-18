@@ -60,7 +60,15 @@ h1 {
   width: 100%;
   background-color: rgb(99, 158, 252);
   border: none;
-  padding: 3px;
+  padding: 6px 0;
   color: #fff;
   font-size: 0.8rem;
+}
+
+button {
+  margin: 5px 0;
+  padding: 6px;
+  background: rgb(208, 206, 206);
+  border: none;
+  border-radius: 3px;
 }
