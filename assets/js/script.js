@@ -6,12 +6,12 @@ var searchForm = $("#search-form");
 var searchButton = $("#search-button");
 
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
-var city = "";
 
 var iconUrl = "https://openweathermap.org/img/w/";
 
-function getWeatherData() {
-  // city = searchInput.val();
+function getWeatherData(event) {
+  event.preventDefault();
+  var city = searchInput.val();
 
   if (city) {
     $.get(
@@ -35,10 +35,8 @@ function getWeatherData() {
   }
 }
 
-// function init() {
-//   searchButton.click(function () {
-//     getWeatherData();
-//   });
-// }
-// init();
-getWeatherData();
+function init() {
+  searchButton.click(getWeatherData);
+}
+
+init();
