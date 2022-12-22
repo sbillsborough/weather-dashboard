@@ -22,7 +22,7 @@ function getWeatherData(event) {
 
       itemWrapper.html(`
           <div class="row">
-            <h2 class="cityTitle">${city} <span>${currentDay}</span></h2>
+            <h2 class="cityTitle">${city} ${currentDay}</h2>
             <img src="${iconUrl + currentData.weather[0].icon + ".png"}"
           </div>
           <p>
