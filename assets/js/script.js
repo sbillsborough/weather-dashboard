@@ -1,17 +1,17 @@
 var currentDay = moment().format("(DD/MM/YYYY)");
 $("#todayDate").text(currentDay);
 
-var searchInput = $(".weather-search");
+var searchInput = $("#search-input");
 var searchForm = $("#search-form");
 var searchButton = $("#search-button");
 
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
-var city = "london";
+var city = "";
 
 var iconUrl = "https://openweathermap.org/img/w/";
 
 function getWeatherData() {
-  // var city = searchInput.val();
+  // city = searchInput.val();
 
   if (city) {
     $.get(
