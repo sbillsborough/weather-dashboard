@@ -21,17 +21,15 @@ function getWeatherData(event) {
       itemWrapper.html("");
 
       itemWrapper.html(`
-      <section id="today" class="today" role="region" aria-live="polite">
           <div class="row">
             <h2 class="cityTitle">${city} <span>${currentDay}</span></h2>
-            ${iconUrl + currentData.weather[0].icon + ".png"}
+            Icon URL: ${iconUrl + currentData.weather[0].icon + ".png"}
           </div>
           <p>
             Temp: ${Math.round(currentData.main.temp)}<br>
             Wind: ${currentData.wind.speed}<br>
             Humidity: ${currentData.main.humidity}%
           </p>
-        </section>
     `);
 
       $.get(
