@@ -32,6 +32,10 @@ hr {
   margin: 10px 0;
 }
 
+.cityTitle:first-letter {
+  text-transform: uppercase;
+}
+
 .today {
   border: 1px solid #000;
   padding: 10px;
