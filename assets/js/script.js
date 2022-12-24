@@ -36,11 +36,11 @@ function getWeatherData(event) {
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
       ).then(function (forecastData) {
         console.log(forecastData.list);
-        console.log(forecastData.list[0].dt_txt);
-        console.log(forecastData.list[8].dt_txt);
-        console.log(forecastData.list[16].dt_txt);
-        console.log(forecastData.list[24].dt_txt);
-        console.log(forecastData.list[32].dt_txt);
+        console.log(forecastData.list[0].dt_txt.substr(0, 10));
+        console.log(forecastData.list[8].dt_txt.substr(0, 10));
+        console.log(forecastData.list[16].dt_txt.substr(0, 10));
+        console.log(forecastData.list[24].dt_txt.substr(0, 10));
+        console.log(forecastData.list[32].dt_txt.substr(0, 10));
       });
     });
   }
