@@ -36,8 +36,6 @@ function getWeatherData(event) {
       $.get(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
       ).then(function (forecastData) {
-        console.log(forecastData.list);
-
         fiveDayWrapper.html("");
 
         fiveDayWrapper.html(`
