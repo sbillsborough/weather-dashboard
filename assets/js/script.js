@@ -6,6 +6,7 @@ var searchForm = $("#search-form");
 var searchButton = $("#search-button");
 var itemWrapper = $("#today");
 var fiveDayWrapper = $("#forecast");
+var searchHistory = [];
 
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
 
