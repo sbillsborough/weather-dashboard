@@ -37,41 +37,42 @@ function getWeatherData(event) {
       $.get(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
       ).then(function (forecastData) {
+        console.log(forecastData.list);
         fiveDayWrapper.html("");
 
         fiveDayWrapper.html(`
         <h2>5-Day Forecast:</h2>
         <div class="weather-container">
         <div class="weather-item column">
-        <h3>${forecastData.list[8].dt_txt.substr(0, 10)}</h3>
+        <h3>${forecastData.list[7].dt_txt.substr(0, 10)}</h3>
         <img src="${iconUrl + forecastData.list[8].weather[0].icon + ".png"}">
-        Temp: ${forecastData.list[8].main.temp} &deg;C<br>
-        Wind: ${forecastData.list[8].wind.speed} KPH<br>
-        Humidity: ${forecastData.list[8].main.humidity}%
+        Temp: ${forecastData.list[7].main.temp} &deg;C<br>
+        Wind: ${forecastData.list[7].wind.speed} KPH<br>
+        Humidity: ${forecastData.list[7].main.humidity}%
         </div>
 
         <div class="weather-item column">
-        <h3>${forecastData.list[16].dt_txt.substr(0, 10)}</h3>
+        <h3>${forecastData.list[15].dt_txt.substr(0, 10)}</h3>
         <img src="${iconUrl + forecastData.list[16].weather[0].icon + ".png"}">
-        Temp: ${forecastData.list[16].main.temp} &deg;C<br>
-        Wind: ${forecastData.list[16].wind.speed} KPH<br>
-        Humidity: ${forecastData.list[16].main.humidity}%
+        Temp: ${forecastData.list[15].main.temp} &deg;C<br>
+        Wind: ${forecastData.list[15].wind.speed} KPH<br>
+        Humidity: ${forecastData.list[15].main.humidity}%
         </div>
 
         <div class="weather-item column">
-        <h3>${forecastData.list[24].dt_txt.substr(0, 10)}</h3>
-        <img src="${iconUrl + forecastData.list[24].weather[0].icon + ".png"}">
-        Temp: ${forecastData.list[24].main.temp} &deg;C<br>
-        Wind: ${forecastData.list[24].wind.speed} KPH<br>
-        Humidity: ${forecastData.list[24].main.humidity}%
+        <h3>${forecastData.list[23].dt_txt.substr(0, 10)}</h3>
+        <img src="${iconUrl + forecastData.list[23].weather[0].icon + ".png"}">
+        Temp: ${forecastData.list[23].main.temp} &deg;C<br>
+        Wind: ${forecastData.list[23].wind.speed} KPH<br>
+        Humidity: ${forecastData.list[23].main.humidity}%
         </div>
 
         <div class="weather-item column">
-        <h3>${forecastData.list[32].dt_txt.substr(0, 10)}</h3>
+        <h3>${forecastData.list[31].dt_txt.substr(0, 10)}</h3>
         <img src="${iconUrl + forecastData.list[32].weather[0].icon + ".png"}">
-        Temp: ${forecastData.list[32].main.temp} &deg;C<br>
-        Wind: ${forecastData.list[32].wind.speed} KPH<br>
-        Humidity: ${forecastData.list[32].main.humidity}%
+        Temp: ${forecastData.list[31].main.temp} &deg;C<br>
+        Wind: ${forecastData.list[31].wind.speed} KPH<br>
+        Humidity: ${forecastData.list[31].main.humidity}%
         </div>
 
         <div class="weather-item column">
