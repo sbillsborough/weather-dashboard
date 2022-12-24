@@ -5,6 +5,7 @@ var searchInput = $("#search-input");
 var searchForm = $("#search-form");
 var searchButton = $("#search-button");
 var itemWrapper = $("#today");
+var fiveDayWrapper = $("#forecast");
 
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
 
@@ -35,32 +36,45 @@ function getWeatherData(event) {
       $.get(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
       ).then(function (forecastData) {
-        console.log(forecastData.list);
-        console.log(`
-        ${forecastData.list[0].dt_txt.substr(0, 10)}
-        Temp: ${forecastData.list[0].main.temp}
-        Wind: ${forecastData.list[0].wind.speed}
+        fiveDayWrapper.html("");
+
+        fiveDayWrapper.html(`
+        <h2>5-Day Forecast:</h2>
+        <div class="weather-container">
+        <div class="weather-item column">
+        <h3>${forecastData.list[0].dt_txt.substr(0, 10)}</h3>
+        Temp: ${forecastData.list[0].main.temp}<br>
+        Wind: ${forecastData.list[0].wind.speed}<br>
         Humidity: ${forecastData.list[0].main.humidity}
+        </div>
 
-        ${forecastData.list[8].dt_txt.substr(0, 10)}
-        Temp: ${forecastData.list[8].main.temp}
-        Wind: ${forecastData.list[8].wind.speed}
+        <div class="weather-item column">
+        <h3>${forecastData.list[8].dt_txt.substr(0, 10)}</h3>
+        Temp: ${forecastData.list[8].main.temp}<br>
+        Wind: ${forecastData.list[8].wind.speed}<br>
         Humidity: ${forecastData.list[8].main.humidity}
+        </div>
 
-        ${forecastData.list[16].dt_txt.substr(0, 10)}
-        Temp: ${forecastData.list[16].main.temp}
-        Wind: ${forecastData.list[16].wind.speed}
+        <div class="weather-item column">
+        <h3>${forecastData.list[16].dt_txt.substr(0, 10)}</h3>
+        Temp: ${forecastData.list[16].main.temp}<br>
+        Wind: ${forecastData.list[16].wind.speed}<br>
         Humidity: ${forecastData.list[16].main.humidity}
+        </div>
 
-        ${forecastData.list[24].dt_txt.substr(0, 10)}
-        Temp: ${forecastData.list[24].main.temp}
-        Wind: ${forecastData.list[24].wind.speed}
+        <div class="weather-item column">
+        <h3>${forecastData.list[24].dt_txt.substr(0, 10)}</h3>
+        Temp: ${forecastData.list[24].main.temp}<br>
+        Wind: ${forecastData.list[24].wind.speed}<br>
         Humidity: ${forecastData.list[24].main.humidity}
+        </div>
 
-        ${forecastData.list[32].dt_txt.substr(0, 10)}
-        Temp: ${forecastData.list[32].main.temp}
-        Wind: ${forecastData.list[32].wind.speed}
+        <div class="weather-item column">
+        <h3>${forecastData.list[32].dt_txt.substr(0, 10)}</h3>
+        Temp: ${forecastData.list[32].main.temp}<br>
+        Wind: ${forecastData.list[32].wind.speed}<br>
         Humidity: ${forecastData.list[32].main.humidity}
+        </div>
         `);
       });
     });
