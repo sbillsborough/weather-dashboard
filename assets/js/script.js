@@ -26,8 +26,8 @@ function getWeatherData(event) {
             <img src="${iconUrl + currentData.weather[0].icon + ".png"}">
           </div>
           <p>
-            Temp: ${Math.round(currentData.main.temp)}<br>
-            Wind: ${currentData.wind.speed}<br>
+            Temp: ${Math.round(currentData.main.temp)}&deg;C<br>
+            Wind: ${currentData.wind.speed} KPH<br>
             Humidity: ${currentData.main.humidity}%
           </p>
     `);
@@ -35,7 +35,11 @@ function getWeatherData(event) {
       $.get(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
       ).then(function (forecastData) {
-        console.log(forecastData);
+        console.log(forecastData.list);
+        // console.log(forecastData.list[1].dt_txt);
+        // console.log(forecastData.list[2].dt_txt);
+        // console.log(forecastData.list[3].dt_txt);
+        // console.log(forecastData.list[4].dt_txt);
       });
     });
   }
