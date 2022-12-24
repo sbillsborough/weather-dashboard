@@ -36,11 +36,32 @@ function getWeatherData(event) {
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`
       ).then(function (forecastData) {
         console.log(forecastData.list);
-        console.log(forecastData.list[0].dt_txt.substr(0, 10));
-        console.log(forecastData.list[8].dt_txt.substr(0, 10));
-        console.log(forecastData.list[16].dt_txt.substr(0, 10));
-        console.log(forecastData.list[24].dt_txt.substr(0, 10));
-        console.log(forecastData.list[32].dt_txt.substr(0, 10));
+        console.log(`
+        ${forecastData.list[0].dt_txt.substr(0, 10)}
+        Temp: ${forecastData.list[0].main.temp}
+        Wind: ${forecastData.list[0].wind.speed}
+        Humidity: ${forecastData.list[0].main.humidity}
+
+        ${forecastData.list[8].dt_txt.substr(0, 10)}
+        Temp: ${forecastData.list[8].main.temp}
+        Wind: ${forecastData.list[8].wind.speed}
+        Humidity: ${forecastData.list[8].main.humidity}
+
+        ${forecastData.list[16].dt_txt.substr(0, 10)}
+        Temp: ${forecastData.list[16].main.temp}
+        Wind: ${forecastData.list[16].wind.speed}
+        Humidity: ${forecastData.list[16].main.humidity}
+
+        ${forecastData.list[24].dt_txt.substr(0, 10)}
+        Temp: ${forecastData.list[24].main.temp}
+        Wind: ${forecastData.list[24].wind.speed}
+        Humidity: ${forecastData.list[24].main.humidity}
+
+        ${forecastData.list[32].dt_txt.substr(0, 10)}
+        Temp: ${forecastData.list[32].main.temp}
+        Wind: ${forecastData.list[32].wind.speed}
+        Humidity: ${forecastData.list[32].main.humidity}
+        `);
       });
     });
   }
