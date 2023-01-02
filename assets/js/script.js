@@ -7,6 +7,7 @@ var searchButton = $("#search-button");
 var itemWrapper = $("#today");
 var fiveDayWrapper = $("#forecast");
 var searchHistory = JSON.parse(localStorage.getItem("city")) || [];
+var historyEl = $(".history-buttons");
 
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
 
@@ -88,6 +89,13 @@ function getWeatherData(event) {
     });
     searchHistory.push(city);
     console.log(searchHistory);
+
+    if (searchHistory) {
+      console.log("hi");
+      for (var i = 0; i < searchHistory.length; i++) {
+        localStorage.setItem("city", JSON.stringify(searchHistory));
+      }
+    }
   }
 }
 
