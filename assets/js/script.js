@@ -91,9 +91,13 @@ function getWeatherData(event) {
     console.log(searchHistory);
 
     if (searchHistory) {
-      console.log("hi");
       for (var i = 0; i < searchHistory.length; i++) {
         localStorage.setItem("city", JSON.stringify(searchHistory));
+        var create = $("<button>");
+        create.attr("type", "submit");
+        create.attr("class", "search-history");
+        create.text(searchHistory[i]);
+        historyEl.append(create);
       }
     }
   }
