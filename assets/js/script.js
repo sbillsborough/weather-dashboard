@@ -6,11 +6,13 @@ var searchForm = $("#search-form");
 var searchButton = $("#search-button");
 var itemWrapper = $("#today");
 var fiveDayWrapper = $("#forecast");
-var searchHistory = [];
+var searchHistory = JSON.parse(localStorage.getItem("city")) || [];
 
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
 
 var iconUrl = "https://openweathermap.org/img/w/";
+
+historyEl.html("");
 
 function getWeatherData(event) {
   event.preventDefault();
@@ -84,7 +86,6 @@ function getWeatherData(event) {
         `);
       });
     });
-    localStorage.setItem("city", city);
     searchHistory.push(city);
     console.log(searchHistory);
   }
