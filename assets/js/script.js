@@ -6,7 +6,7 @@ var searchForm = $("#search-form");
 var searchButton = $("#search-button");
 var itemWrapper = $("#today");
 var fiveDayWrapper = $("#forecast");
-var searchHistory = JSON.parse(localStorage.getItem("city")) || [];
+var searchHistory = JSON.parse(localStorage.getItem("city"));
 var historyEl = $(".history-buttons");
 var historyBtn = $(".search-history");
 
@@ -90,30 +90,15 @@ function getWeatherData(event) {
     });
     searchHistory.push(city);
     console.log(searchHistory);
-  }
-  createButtons();
-}
 
-function createButtons() {
-  if (searchHistory) {
-    for (var i = 0; i < searchHistory.length; i++) {
-      localStorage.setItem("city", JSON.stringify(searchHistory));
-      var create = $("<button>");
-      create.attr("type", "submit");
-      create.attr("class", "search-history");
-      create.attr("onclick", "searchBtnValue()");
-      create.text(searchHistory[i]);
-      historyEl.append(create);
+    if (searchHistory) {
+      console.log("hi");
+      for (var i = 0; i < searchHistory.length; i++) {
+        localStorage.setItem("city", JSON.stringify(searchHistory));
+      }
     }
   }
 }
-
-function searchBtnValue() {
-  var historyBtn = "history btn";
-  console.log(historyBtn);
-}
-
-createButtons();
 
 function init() {
   searchButton.click(getWeatherData);
