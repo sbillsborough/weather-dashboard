@@ -101,19 +101,30 @@ function createButtons() {
       var create = $("<button>");
       create.attr("type", "submit");
       create.attr("class", "search-history");
-      create.attr("onclick", "searchBtnValue()");
+      // create.attr("onclick", "searchBtnValue()");
       create.text(searchHistory[i]);
       historyEl.append(create);
     }
   }
 }
 
-function searchBtnValue() {
-  var historyBtn = "clicked history";
-  console.log(historyBtn);
-}
-
 createButtons();
+
+// function searchBtnValue(event) {
+//   event.preventDefault()
+//   var historyBtn = "clicked history";
+//   console.log(historyBtn);
+// }
+
+var searchBtnValue = $(".search-history");
+
+searchBtnValue.click(function (event) {
+  console.log("history");
+  event.preventDefault();
+  var text = $(this).text();
+  searchInput.val(text);
+  getWeatherData(event);
+});
 
 function init() {
   searchButton.click(getWeatherData);
