@@ -1,8 +1,6 @@
-// MomentJS current date
 var currentDay = moment().format("(DD/MM/YYYY)");
 $("#todayDate").text(currentDay);
 
-// Global variables and query selectors
 var searchInput = $("#search-input");
 var searchForm = $("#search-form");
 var searchButton = $("#search-button");
@@ -15,8 +13,6 @@ var historyBtn = $(".search-history");
 var apiKey = "b4d39ba071aaf22dfaae85c01257a991";
 
 var iconUrl = "https://openweathermap.org/img/w/";
-
-// Uses the API to fetch data and add to the DOM
 
 historyEl.html("");
 
@@ -98,8 +94,6 @@ function getWeatherData(event) {
   createButtons();
 }
 
-// Creates the search history buttons
-
 function createButtons() {
   if (searchHistory) {
     for (var i = 0; i < searchHistory.length; i++) {
@@ -116,7 +110,11 @@ function createButtons() {
 
 createButtons();
 
-// Function to search for the city of the relevant button
+// function searchBtnValue(event) {
+//   event.preventDefault()
+//   var historyBtn = "clicked history";
+//   console.log(historyBtn);
+// }
 
 var searchBtnValue = $(".search-history");
 
