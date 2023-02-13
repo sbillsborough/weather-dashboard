@@ -92,20 +92,22 @@ function getWeatherData(event) {
     });
     if (searchHistory.indexOf(city) == -1) {
       searchHistory.push(city);
-      console.log("that doesn't exist");
+
       createButtons();
     }
   }
 }
 
 function createButtons() {
-  for (var i = 0; i < searchHistory.length; i++) {
-    localStorage.setItem("city", JSON.stringify(searchHistory));
-    var create = $("<button>");
-    create.attr("type", "submit");
-    create.attr("class", "search-history");
-    create.text(searchHistory[i]);
-    historyEl.append(create);
+  if (searchHistory.indexOf(city) == -1) {
+    for (var i = 0; i < searchHistory.length; i++) {
+      localStorage.setItem("city", JSON.stringify(searchHistory));
+      var create = $("<button>");
+      create.attr("type", "submit");
+      create.attr("class", "search-history");
+      create.text(searchHistory[i]);
+      historyEl.append(create);
+    }
   }
 }
 
