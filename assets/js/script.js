@@ -16,6 +16,8 @@ var iconUrl = "https://openweathermap.org/img/w/";
 
 historyEl.html("");
 
+var city;
+
 function getWeatherData(event) {
   event.preventDefault();
   var city = searchInput.val();
@@ -88,34 +90,26 @@ function getWeatherData(event) {
         `);
       });
     });
-    searchHistory.push(city);
-    localStorage.setItem("city", JSON.stringify(searchHistory));
-    console.log(searchHistory);
-    createButtons();
-  }
-}
-
-function createButtons() {
-  if (searchHistory) {
-    for (var i = 0; i < searchHistory.length; i++) {
-      localStorage.setItem("city", JSON.stringify(searchHistory));
-      var create = $("<button>");
-      create.attr("type", "submit");
-      create.attr("class", "search-history");
-      create.attr("onclick", "searchBtnValue");
-      create.text(searchHistory[i]);
-      historyEl.append(create);
+    if (searchHistory.indexOf(city) == -1) {
+      searchHistory.push(city);
+      console.log("that doesn't exist");
+      createButtons();
     }
   }
 }
 
-createButtons();
-
-function searchBtnValue(event) {
-  event.preventDefault();
-  var historyBtn = "clicked history";
-  console.log(historyBtn);
+function createButtons() {
+  for (var i = 0; i < searchHistory.length; i++) {
+    localStorage.setItem("city", JSON.stringify(searchHistory));
+    var create = $("<button>");
+    create.attr("type", "submit");
+    create.attr("class", "search-history");
+    create.text(searchHistory[i]);
+    historyEl.append(create);
+  }
 }
+
+createButtons();
 
 var searchBtnValue = $(".search-history");
 
