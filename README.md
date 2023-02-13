@@ -17,7 +17,7 @@ Made with MomentJS to fetch current time and to practise jQuery plus setting and
 
 ## Screenshots
 
-![Example screenshot](./assets/images/sample.png)
+![Example screenshot](./assets/images/sample.png))
 
 ## Technologies
 
