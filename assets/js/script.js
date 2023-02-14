@@ -18,6 +18,18 @@ historyEl.html("");
 
 var city;
 
+function hist() {
+  $(document).ready(function () {
+    searchBtnValue.click(function (event) {
+      console.log("clicked history btn");
+      event.preventDefault();
+      var text = $(this).text();
+      searchInput.val(text);
+      getWeatherData(event);
+    });
+  });
+}
+
 function getWeatherData(event) {
   event.preventDefault();
   var city = searchInput.val();
@@ -92,7 +104,6 @@ function getWeatherData(event) {
     });
     if (searchHistory.indexOf(city) == -1) {
       searchHistory.push(city);
-
       createButtons();
     }
   }
@@ -116,18 +127,6 @@ createButtons();
 
 var searchBtnValue = $(".search-history");
 
-function hist() {
-  $(document).ready(function () {
-    searchBtnValue.click(function (event) {
-      console.log("clicked history btn");
-      event.preventDefault();
-      var text = $(this).text();
-      searchInput.val(text);
-      getWeatherData(event);
-    });
-  });
-}
-
 hist();
 
 function init() {
@@ -135,5 +134,3 @@ function init() {
 }
 
 init();
-
-// Hi Scott, Excellent work on this assignment! You successfully built a dynamic web application weather dashboard powered by your JavaScript code! Great job hitting the OpenWeather API, and implementing a responsive UI to display weather data! Your deployment was successful, and your app loads without any issues. I was able to see the weather in Los Angeles, Tokyo, Thimphu, Budapest, and Timbuktu! You managed to meet all of the technical acceptance criteria for this challenge. However, you lost some points because of how the search history functions. Right now you have it set up so that every time a city is searched for, that city gets added to the end of a searchHistory array, and then that entire array is set as the search history. I recommend reaching out to your tutor, and asking them to help you fix the issues with your search history. If you aren't working with a tutor yet, request one immediately. Tutoring sessions are part of the bootcamp program, but it's up to you to request/schedule them. I went through bootcamp not long ago, and my tutor did a great job of helping me stay on track throughout the course! Everything looks great with your repo. Your codebase is well organized, and easy to follow. You have a healthy commit history, complete with descriptive commit messages, and a comprehensive README that includes all of the necessary information and links. Sweet! Keep up the good work, and happy coding! C.G. - Sean S. Grade = 95%
