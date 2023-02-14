@@ -99,6 +99,7 @@ function getWeatherData(event) {
 }
 
 function createButtons() {
+  historyEl.empty();
   if (searchHistory.indexOf(city) == -1) {
     for (var i = 0; i < searchHistory.length; i++) {
       localStorage.setItem("city", JSON.stringify(searchHistory));
