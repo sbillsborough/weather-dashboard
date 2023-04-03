@@ -116,18 +116,25 @@ function createButtons() {
       localStorage.setItem("city", JSON.stringify(searchHistory));
       var create = $("<button>");
       create.attr("type", "submit");
-      create.attr("class", "search-history");
+      create.attr("class", "search-history-btn");
       create.text(searchHistory[i]);
       historyEl.append(create);
     }
   }
+
+  var searchHistoryBtn = $(".search-history-btn");
+
+  searchHistoryBtn.click(function (event) {
+    event.preventDefault();
+    var text = $(this).text();
+    searchInput.val(text);
+    getWeatherData(event);
+  });
 }
 
 createButtons();
 
 var searchBtnValue = $(".search-history");
-
-hist();
 
 function init() {
   searchButton.click(getWeatherData);
